@@ -1,8 +1,9 @@
+import scrollbars from "tailwind-scrollbar";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,js,tsx,ts}"],
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [scrollbars({ nocompatible: true })],
+};
