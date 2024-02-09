@@ -13,16 +13,31 @@ const emptyEvent = {
 
 const DayCalendar = () => {
   return (
-    <div className="w-full py-5 px-5 h-screen">
-      <div className="grid grid-cols-7 w-full  scrollbar-thin scrollbar-thumb-red-800 divide-x-2 divide-y-2 rounded-t-lg border bg-black">
+    <div className="w-full py-5 flex flex-col  px-5 h-full ">
+      <div className="grid grid-cols-7 w-full scrollbar-none scrollbar-thumb-red-800 divide-x  border-x border-t  bg-white ">
         {/* header */}
-        {[" ", ...SCENES].map((scene, index) => (
-          <div key={`${index}-${scene}`} className="text-center py-5 font-bold">
-            {scene}
-          </div>
-        ))}
+        {[" ", ...SCENES].map((scene, index) => {
+          if (index === 0)
+            return (
+              <div
+                key={`${index}-${scene}`}
+                className="text-center py-5 text-black font-semibold border-b"
+              >
+                Hora
+              </div>
+            );
+
+          return (
+            <div
+              key={`${index}-${scene}`}
+              className="text-center py-5 text-black font-semibold"
+            >
+              {scene}
+            </div>
+          );
+        })}
       </div>
-      <div className="grid grid-cols-7 w-full overflow-y-auto scrollbar-thin scrollbar-thumb-red-800 divide-x-2 divide-y-2 border">
+      <div className="grid grid-cols-7 w-full bg-white overflow-y-auto scrollbar-none  divide-x border-x divide-y">
         {/* body */}
         {hours.map((hour, index) => {
           const keys = Object.keys(grouped);
