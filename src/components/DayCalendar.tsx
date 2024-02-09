@@ -62,11 +62,11 @@ const DayCalendar = () => {
 
           return (
             <>
-              <HourCell key={index} hour={hour} />
+              <HourCell key={`${index}-${hour}`} hour={hour} />
               {eventsRow.map((event, index) => {
                 return (
                   <EventBox
-                    key={index}
+                    key={`${index}-${hour}`}
                     scene={event.scene}
                     hour={event.time}
                     title={event.title}
