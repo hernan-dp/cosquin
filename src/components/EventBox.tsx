@@ -24,7 +24,7 @@ const EventBox = ({
     <div className="text-center h-[100px] relative">
       <div
         className={cn(
-          `absolute w-[90%] h-[50px] rounded-xl z-10 -translate-x-[50%] transform`
+          `absolute w-[95%] h-[50px] rounded-xl z-10 -translate-x-[50%] transform`
         )}
         style={{
           top: `${percentage}%`,
@@ -42,7 +42,7 @@ const EventBox = ({
             "bg-pink-500 opacity-30": scene === "Paraguay",
           })}
         />
-        <div className="h-full w-full flex gap-2 py-2 px-2">
+        <div className="h-full w-full flex gap-2 py-1 px-1">
           <div
             className={cn("w-1 h-full rounded-lg", {
               "bg-red-500": scene === "Blues",
