@@ -1,9 +1,3 @@
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { cn } from "../utils/cn";
 
 const getPercentageByMinutes = (time: string) => {
@@ -48,9 +42,7 @@ const EventBox = ({
             "bg-pink-500 opacity-30": scene === "Paraguay",
           })}
         />
-        <TooltipProvider>
-  <Tooltip>
-    <TooltipTrigger><div className="h-full w-full flex gap-2 py-2 px-2">
+        <div className="h-full w-full flex gap-2 py-2 px-2">
           <div
             className={cn("w-1 h-full rounded-lg", {
               "bg-red-500": scene === "Blues",
@@ -66,7 +58,7 @@ const EventBox = ({
           </div>
           <div className={cn("z-20 flex flex-col justify-between")}>
             <h1
-              className={cn("line-clamp-1 text-xs text-left font-bold", {
+              className={cn("line-clamp-2 text-[8px] text-left font-bold", {
                 "text-red-500": scene === "Blues",
                 "text-green-500": scene === "Norte",
                 "text-blue-500": scene === "Sur",
@@ -90,12 +82,7 @@ const EventBox = ({
               {hour}
             </h1>
           </div>
-        </div></TooltipTrigger>
-    <TooltipContent>
-      {title}
-    </TooltipContent>
-  </Tooltip>
-</TooltipProvider>
+        </div>
       </div>
     </div>
   );
