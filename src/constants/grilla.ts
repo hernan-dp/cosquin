@@ -6,6 +6,55 @@ type Ev = {
   scene: string;
 };
 
+
+const eventsDay2Norte = [
+  { title: "DAMAS GRATIS", time: "0:30", scene: "Norte" },
+  { title: "DUKI", time: "22:50", scene: "Norte" },
+  { title: "YSY A", time: "21:00", scene: "Norte" },
+  { title: "LOS CALIGARIS", time: "19:20", scene: "Norte" },
+  { title: "SNOW THA PRODUCT", time: "18:10", scene: "Norte" },
+  { title: "MILO J", time: "17:00", scene: "Norte" },
+  { title: "NEO PISTEA", time: "16:00", scene: "Norte" },
+  { title: "YAMI SAFDIE", time: "15:10", scene: "Norte" },
+  { title: "ROSA PROFUNDA", time: "14:30", scene: "Norte" }
+];
+
+// Day 2 - Escenario Sur
+const eventsDay2Sur = [
+  { title: "BRESH", time: "02:10", scene: "Sur" },
+  { title: "MOLOTOV", time: "00:55", scene: "Sur" },
+  { title: "LAS PELOTAS", time: "23:25", scene: "Sur" },
+  { title: "SLASH ft. MYLES KENNEDY AND THE CONSPIRATORS", time: "21:30", scene: "Sur" },
+  { title: "CIRO Y LOS PERSAS", time: "19:20", scene: "Sur" },
+  { title: "LAS PASTILLAS DEL ABUELO", time: "17:30", scene: "Sur" },
+  { title: "CRUZANDO EL CHARCO", time: "16:00", scene: "Sur" },
+  { title: "EL BORDO", time: "15:10", scene: "Sur" },
+  { title: "NENAGENIX", time: "14:30", scene: "Sur" }
+];
+
+// Day 2 - Escenario Montaña
+const eventsDay2Montaña = [
+  { title: "ANITA B. QUEEN", time: "01:20", scene: "Montaña" },
+  { title: "STEVE AOKI", time: "23:40", scene: "Montaña" },
+  { title: "PECES RAROS", time: "22:10", scene: "Montaña" },
+  { title: "USTED SEÑALEMELO", time: "20:40", scene: "Montaña" },
+  { title: "CATUPECU MACHU", time: "19:10", scene: "Montaña" },
+  { title: "EL KUELGUE", time: "18:00", scene: "Montaña" },
+  { title: "ESTELARES", time: "17:00", scene: "Montaña" },
+  { title: "LEO RIZZI", time: "16:00", scene: "Montaña" }
+];
+
+// Day 2 - Escenario Paraguay
+const eventsDay2Paraguay = [
+  { title: "ALBOROSIE", time: "23:20", scene: "Paraguay" },
+  { title: "DON CARLOS", time: "21:40", scene: "Paraguay" },
+  { title: "DANCING MOOD", time: "20:00", scene: "Paraguay" },
+  { title: "MIMI MAURA", time: "18:40", scene: "Paraguay" },
+  { title: "STAILOK", time: "17:20", scene: "Paraguay" },
+  { title: "ALIKA", time: "16:00", scene: "Paraguay" },
+  { title: "PANAL", time: "15:00", scene: "Paraguay" },
+  { title: "ARMY OF DUB", time: "14:00", scene: "Paraguay" }
+];
 const events1 = [
   {
     title: "LOS AUTÉNTICOS DECADENTES",
@@ -119,12 +168,10 @@ const eventsCasitaDeBlues = [
 ];
 
 export const ALL_EVENTS = [
-  ...events1,
-  ...event2,
-  ...eventsMontaña,
-  ...eventsBoomerang,
-  ...eventsParaguay,
-  ...eventsCasitaDeBlues,
+  ...eventsDay2Norte,
+  ...eventsDay2Sur,
+  ...eventsDay2Montaña,
+  ...eventsDay2Paraguay
 ];
 
 export const SCENES = [
