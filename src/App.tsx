@@ -4,7 +4,7 @@ import DayCalendar from "./components/DayCalendar";
 function App() {
   const [day, setDay] = useState(1);
   return (
-    <div className="flex flex-col h-screen w-screen relative">
+    <div className="flex flex-col h-[100dvh] w-[100dvw] relative">
       <DayCalendar day={day} />
       <button
         onClick={() => {
