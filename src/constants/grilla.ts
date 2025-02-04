@@ -1,177 +1,160 @@
 import _ from "lodash";
 
-type Ev = {
-  title: string;
-  time: string;
-  scene: string;
-};
-
-
 const eventsDay2Norte = [
-  { title: "DAMAS GRATIS", time: "0:30", scene: "Norte" },
-  { title: "DUKI", time: "22:50", scene: "Norte" },
-  { title: "YSY A", time: "21:00", scene: "Norte" },
-  { title: "LOS CALIGARIS", time: "19:20", scene: "Norte" },
-  { title: "SNOW THA PRODUCT", time: "18:10", scene: "Norte" },
-  { title: "MILO J", time: "17:00", scene: "Norte" },
-  { title: "NEO PISTEA", time: "16:00", scene: "Norte" },
-  { title: "YAMI SAFDIE", time: "15:10", scene: "Norte" },
-  { title: "ROSA PROFUNDA", time: "14:30", scene: "Norte" }
+  { title: "Luck Ra", time: "00:00", scene: "Norte" },
+  { title: "Nafta", time: "23:00", scene: "Norte" },
+  { title: "La Delio Valdez", time: "21:00", scene: "Norte" },
+  { title: "Nicki Nicole", time: "19:40", scene: "Norte" },
+  { title: "Ca7riel y Paco Amoroso", time: "17:50", scene: "Norte" },
+  { title: "Bhavi", time: "16:30", scene: "Norte" },
+  { title: "Agusfortnite2008 & Stiffy", time: "15:20", scene: "Norte" },
+  { title: "K4", time: "14:30", scene: "Norte" },
 ];
 
 // Day 2 - Escenario Sur
 const eventsDay2Sur = [
-  { title: "BRESH", time: "02:10", scene: "Sur" },
-  { title: "MOLOTOV", time: "00:55", scene: "Sur" },
-  { title: "LAS PELOTAS", time: "23:25", scene: "Sur" },
-  { title: "SLASH ft. MYLES KENNEDY AND THE CONSPIRATORS", time: "21:30", scene: "Sur" },
-  { title: "CIRO Y LOS PERSAS", time: "19:20", scene: "Sur" },
-  { title: "LAS PASTILLAS DEL ABUELO", time: "17:30", scene: "Sur" },
-  { title: "CRUZANDO EL CHARCO", time: "16:00", scene: "Sur" },
-  { title: "EL BORDO", time: "15:10", scene: "Sur" },
-  { title: "NENAGENIX", time: "14:30", scene: "Sur" }
+  { title: "Los Piojos", time: "22:00", scene: "Sur" },
+  { title: "Skay y Los Fakires", time: "20:30", scene: "Sur" },
+  { title: "Las Pelotas", time: "19:10", scene: "Sur" },
+  { title: "Ale Kurz", time: "17:50", scene: "Sur" },
+  { title: "La Chancha Muda", time: "16:30", scene: "Sur" },
+  { title: "Wayra Iglesias", time: "15:20", scene: "Sur" },
+  { title: "Daniela Milagro", time: "14:30", scene: "Sur" },
 ];
 
 // Day 2 - Escenario Montaña
 const eventsDay2Montaña = [
-  { title: "ANITA B. QUEEN", time: "01:20", scene: "Montaña" },
-  { title: "STEVE AOKI", time: "23:40", scene: "Montaña" },
-  { title: "PECES RAROS", time: "22:10", scene: "Montaña" },
-  { title: "USTED SEÑALEMELO", time: "20:40", scene: "Montaña" },
-  { title: "CATUPECU MACHU", time: "19:10", scene: "Montaña" },
-  { title: "EL KUELGUE", time: "18:00", scene: "Montaña" },
-  { title: "ESTELARES", time: "17:00", scene: "Montaña" },
-  { title: "LEO RIZZI", time: "16:00", scene: "Montaña" }
+  { title: "Peces Raros", time: "00:20", scene: "Montaña" },
+  { title: "Juan Hansen Live", time: "23:10", scene: "Montaña" },
+  { title: "Deadmau5", time: "20:40", scene: "Montaña" },
+  { title: "Bandalos Chinos", time: "18:40", scene: "Montaña" },
+  { title: "Silvestre y La Naranja", time: "17:10", scene: "Montaña" },
+  { title: "Blair", time: "15:50", scene: "Montaña" },
+  { title: "Genitallica", time: "14:30", scene: "Montaña" },
 ];
 
 // Day 2 - Escenario Paraguay
 const eventsDay2Paraguay = [
-  { title: "ALBOROSIE", time: "23:20", scene: "Paraguay" },
-  { title: "DON CARLOS", time: "21:40", scene: "Paraguay" },
-  { title: "DANCING MOOD", time: "20:00", scene: "Paraguay" },
-  { title: "MIMI MAURA", time: "18:40", scene: "Paraguay" },
-  { title: "STAILOK", time: "17:20", scene: "Paraguay" },
-  { title: "ALIKA", time: "16:00", scene: "Paraguay" },
-  { title: "PANAL", time: "15:00", scene: "Paraguay" },
-  { title: "ARMY OF DUB", time: "14:00", scene: "Paraguay" }
+  { title: "Hijo de la Tormenta", time: "23:30", scene: "Paraguay" },
+  { title: "Rosa Profunda", time: "22:30", scene: "Paraguay" },
+  { title: "Winona Riders", time: "21:30", scene: "Paraguay" },
+  { title: "Massacre", time: "20:10", scene: "Paraguay" },
+  { title: "Vapors of Morphine", time: "19:00", scene: "Paraguay" },
+  { title: "Zoe Gotusso", time: "18:00", scene: "Paraguay" },
+  { title: "Javiera Mena", time: "16:50", scene: "Paraguay" },
+  { title: "Manu Martínez", time: "16:00", scene: "Paraguay" },
+  { title: "Lara 91K", time: "15:10", scene: "Paraguay" },
+  { title: "Fonso y Las Paritarias", time: "14:20", scene: "Paraguay" },
 ];
-const events1 = [
+
+const eventsDay2Blues = [
+  { title: "Los Búfalos Sedientos", time: "22:45", scene: "Blues" },
+  { title: "Ivan Singh & Sheryl Youngblood", time: "21:45", scene: "Blues" },
+  { title: "Piti Fernández", time: "20:30", scene: "Blues" },
+  { title: "The Rhythm Gamblers", time: "19:25", scene: "Blues" },
+  {
+    title: "César Valdomir + Mari Pole + Nico Raffetta",
+    time: "18:20",
+    scene: "Blues",
+  },
+  { title: "Sol Bassa", time: "17:25", scene: "Blues" },
+  { title: "Cindy Coleoni", time: "16:20", scene: "Blues" },
+  { title: "Marlene Suchy & The Super Sax", time: "15:25", scene: "Blues" },
+  { title: "Papi Chimi Romero & Brossoul", time: "14:30", scene: "Blues" },
+];
+
+const eventsDay1Norte = [
   {
     title: "LOS AUTÉNTICOS DECADENTES",
-    time: "00:20",
+    time: "00:40",
     scene: "Norte",
   },
-  { title: "CONOCIENDO RUSIA", time: "22:50", scene: "Norte" },
-  { title: "BABASONICOS", time: "21:20", scene: "Norte" },
-  { title: "DILLOM", time: "20:00", scene: "Norte" },
-  { title: "LOS PERICOS Y AMIGOS", time: "18:30", scene: "Norte" },
-  { title: "NAFTA", time: "17:10", scene: "Norte" },
-  { title: "SILVESTRE Y LA NARANJA", time: "16:10", scene: "Norte" },
-  { title: "NATALIE PEREZ", time: "15:20", scene: "Norte" },
-  { title: "BLAIR", time: "14:30", scene: "Norte" },
+  { title: "DILLOM", time: "23:10", scene: "Norte" },
+  { title: "AIRBAG", time: "21:40", scene: "Norte" },
+  { title: "DIVIDIDOS", time: "19:35", scene: "Norte" },
+  { title: "EL MATO A UN POLICIA MOT", time: "17:50", scene: "Norte" },
+  { title: "HILDA CANTA A CHARLY", time: "16:30", scene: "Norte" },
+  { title: "KOINO YOKAN", time: "15:20", scene: "Norte" },
+  { title: "SANTI CELLI", time: "14:30", scene: "Norte" },
 ];
 
-const event2 = [
-  { title: "CARAS EXTRAÑAS", time: "01:10", scene: "Sur" },
-  { title: "LA VELA PUERCA", time: "23:40", scene: "Sur" },
-  { title: "SKAY Y LOS FAKIRES", time: "22:10", scene: "Sur" },
-  { title: "DIVIDIDOS", time: "20:00", scene: "Sur" },
-  { title: "AIRBAG", time: "18:30", scene: "Sur" },
-  { title: "SUEÑO DE PESCADO", time: "17:00", scene: "Sur" },
-  { title: "LA MISSISSIPPI", time: "15:50", scene: "Sur" },
-  { title: "LA CHANCHA MUDA", time: "15:00", scene: "Sur" },
-  { title: "WINONA RIDERS", time: "14:30", scene: "Sur" },
+const eventsDay1Sur = [
+  { title: "RATONES PARANOICOS", time: "00:30", scene: "Sur" },
+  { title: "LAS PASTILLAS DEL ABUELO", time: "23:10", scene: "Sur" },
+  { title: "BABASONICOS", time: "21:40", scene: "Sur" },
+  { title: "WOS", time: "19:40", scene: "Sur" },
+  { title: "GUASONES", time: "17:50", scene: "Sur" },
+  { title: "LOS TIPITOS", time: "16:30", scene: "Sur" },
+  { title: "JOVENES PORDIOSEROS", time: "15:20", scene: "Sur" },
+  { title: "RYAN", time: "14:30", scene: "Sur" },
 ];
 
-const eventsMontaña = [
-  { title: "CLAPTONE", time: "02:15", scene: "Montaña" },
-  { title: "GORDO", time: "00:50", scene: "Montaña" },
-  { title: "VICTORIA ENGEL", time: "23:45", scene: "Montaña" },
-  { title: "TIAGO PZK", time: "22:30", scene: "Montaña" },
-  { title: "LALI", time: "21:00", scene: "Montaña" },
-  { title: "MIRANDA!", time: "19:30", scene: "Montaña" },
-  { title: "BANDALOS CHINOS", time: "18:10", scene: "Montaña" },
-  { title: "ARDE BOGOTA", time: "17:10", scene: "Montaña" },
-  { title: "SHINOVA", time: "16:10", scene: "Montaña" },
+const eventsDay1Montaña = [
+  { title: "POPOF B2B", time: "02:00", scene: "Montaña" },
+  { title: "JULIAN JEWEIL", time: "01:00", scene: "Montaña" },
+  { title: "MARIANO MELLINO", time: "00:00", scene: "Montaña" },
+  { title: "CONOCIENDO RUSIA", time: "22:40", scene: "Montaña" },
+  { title: "NO TE VA A GUSTAR", time: "20:40", scene: "Montaña" },
+  { title: "LA VELA PUERCA", time: "18:40", scene: "Montaña" },
+  { title: "CRUZANDO EL CHARCO", time: "17:10", scene: "Montaña" },
+  { title: "EL ZAR", time: "15:50", scene: "Montaña" },
+  { title: "INAZULINA", time: "15:00", scene: "Montaña" },
 ];
 
-const eventsBoomerang = [
-  { title: "POLENTA", time: "01:10", scene: "Boomerang" },
-  { title: "LEON CORDERO", time: "00:00", scene: "Boomerang" },
-  { title: "1915", time: "22:50", scene: "Boomerang" },
-  { title: "ISLA DE CARAS", time: "21:50", scene: "Boomerang" },
+const eventsDay1Boomerang = [
+  { title: "POLENTA", time: "00:00", scene: "Boomerang" },
+  { title: "TURF", time: "22:50", scene: "Boomerang" },
+  { title: "EL PLAN DE LA MARIPOSA", time: "21:30", scene: "Boomerang" },
+  { title: "EMMANUEL HORVILLEUR", time: "20:30", scene: "Boomerang" },
   {
-    title: "ALAN SUTTON Y LAS CRIATURITAS DE LA ANSIEDAD",
-    time: "20:40",
+    title: "INDIOS",
+    time: "19:20",
     scene: "Boomerang",
   },
-  { title: "DANTE SPINETTA", time: "19:40", scene: "Boomerang" },
+  { title: "LEO RIZZI", time: "18:20", scene: "Boomerang" },
   {
-    title: "MELANIE WILLIAMS & EL CABLOIDE",
-    time: "17:30",
+    title: "SIDDHARTHA",
+    time: "17:20",
     scene: "Boomerang",
   },
-  { title: "VEINTIUNO", time: "16:40", scene: "Boomerang" },
-  { title: "PEDRO PASTOR", time: "15:50", scene: "Boomerang" },
-  { title: "MARTIN GIUSTA", time: "15:00", scene: "Boomerang" },
-];
-
-const eventsParaguay = [
-  {
-    title: "FIESTA SABOR: VILLA DIAMANTE – CONEJA CHINA",
-    time: "00:30",
-    scene: "Paraguay",
-  },
-  { title: "SABOR CANELA", time: "23:50", scene: "Paraguay" },
-  { title: "SARA HEBE", time: "22:10", scene: "Paraguay" },
-  { title: "KE PERSONAJES", time: "20:50", scene: "Paraguay" },
-  { title: "LA DELIO VALDEZ", time: "19:40", scene: "Paraguay" },
-  { title: "LOS TABALEROS", time: "18:30", scene: "Paraguay" },
-  { title: "LOS PEÑALOZA", time: "17:30", scene: "Paraguay" },
-  { title: "LUANA", time: "16:30", scene: "Paraguay" },
-  { title: "KAMADA", time: "15:30", scene: "Paraguay" },
+  { title: "VINOCIO", time: "16:30", scene: "Boomerang" },
+  { title: "FLORIAN", time: "15:40", scene: "Boomerang" },
+  { title: "UMA", time: "14:50", scene: "Boomerang" },
 ];
 
 const eventsCasitaDeBlues = [
   {
-    title: "JULIETA LASO",
-    time: "22:45",
+    title: "TRUBUTO A PAPPO",
+    time: "22:40",
     scene: "Blues",
   },
   {
-    title: "ESCALANDRUM",
-    time: "21:40",
+    title: "MEMPHIS LA BLUSERA",
+    time: "21:15",
     scene: "Blues",
   },
   {
-    title: "IVAN SINGH Y ALICIA YA YAH TOWNSEND",
-    time: "20:35",
+    title: "CLAUDIA SETTE Y TOYO BAGOSO",
+    time: "20:10",
     scene: "Blues",
   },
   {
-    title: "CUATRO AL HILO",
-    time: "19:40",
+    title: "LOS ESPIRITUS",
+    time: "18:55",
     scene: "Blues",
   },
   {
-    title: "WAYRA IGLESIAS",
-    time: "18:45",
+    title: "CLAUDETTE KING",
+    time: "17:50",
     scene: "Blues",
   },
-  { title: "MIAU TRIO", time: "17:50", scene: "Blues" },
-  { title: "MARLENE", time: "16:55", scene: "Blues" },
+  { title: "YULIE Y VANE RUTH", time: "16:55", scene: "Blues" },
+  { title: "THE GINGER HEARTS", time: "16:00", scene: "Blues" },
   {
-    title: "THE ROCKMEN",
-    time: "16:00",
+    title: "LOS MENTIDORES",
+    time: "15:00",
     scene: "Blues",
   },
-];
-
-export const ALL_EVENTS = [
-  ...eventsDay2Norte,
-  ...eventsDay2Sur,
-  ...eventsDay2Montaña,
-  ...eventsDay2Paraguay
 ];
 
 export const SCENES = [
@@ -183,6 +166,11 @@ export const SCENES = [
   "Blues",
 ];
 
+export const getSceneByDay = (day: number) => {
+  if (day === 1) return ["Norte", "Sur", "Montaña", "Boomerang", "Blues"];
+  return ["Norte", "Sur", "Montaña", "Paraguay", "Blues"];
+};
+
 export const SCENE_BY_INDEX: { [key: string]: string } = {
   0: "Norte",
   1: "Sur",
@@ -192,38 +180,27 @@ export const SCENE_BY_INDEX: { [key: string]: string } = {
   5: "Blues",
 };
 
-export const getGoruped = () => {
-  const order = _.orderBy(ALL_EVENTS, "time", "asc");
+export const eventByDay = {
+  1: [
+    ...eventsDay1Norte,
+    ...eventsDay1Sur,
+    ...eventsDay1Montaña,
+    ...eventsDay1Boomerang,
+    ...eventsCasitaDeBlues,
+  ],
+  2: [
+    ...eventsDay2Norte,
+    ...eventsDay2Sur,
+    ...eventsDay2Montaña,
+    ...eventsDay2Paraguay,
+    ...eventsDay2Blues,
+  ],
+};
+
+export const getGoruped = (day: number) => {
+  const events = eventByDay[day as keyof typeof eventByDay];
+  const order = _.orderBy(events, "time", "asc");
   const grouped = _.groupBy(order, "time");
 
   return grouped;
-};
-
-const groupedData = getGoruped();
-
-export const generateHourlyArray = () => {
-  const hours = Object.keys(groupedData);
-  const newGrouped: { [key: string]: string[] } = {};
-
-  for (let hour = 0; hour < hours.length; hour++) {
-    const element = groupedData[hours[hour]];
-
-    newGrouped[hours[hour]] = handleHour(element);
-  }
-
-  return newGrouped;
-};
-
-const handleHour = (entriesByHour: Ev[]) => {
-  const completeArray: string[] = [];
-  SCENES.forEach((scene) => {
-    const found = entriesByHour.find((entry) => entry.scene === scene);
-    if (found) {
-      completeArray.push(found.title);
-    } else {
-      completeArray.push("");
-    }
-  });
-
-  return completeArray;
 };

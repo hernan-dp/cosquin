@@ -1,9 +1,8 @@
-import { SCENES, getGoruped } from "../constants/grilla";
+import { useMemo } from "react";
+import { getGoruped, getSceneByDay } from "../constants/grilla";
 import { hours } from "../constants/hours";
 import EventBox from "./EventBox";
 import HourCell from "./HourCell";
-
-const grouped = getGoruped();
 
 const emptyEvent = {
   title: "",
@@ -11,10 +10,13 @@ const emptyEvent = {
   time: "",
 };
 
-const DayCalendar = () => {
+const DayCalendar = ({ day }: { day: number }) => {
+  const grouped = useMemo(() => getGoruped(day), [day]);
+  const SCENES = useMemo(() => getSceneByDay(day), [day]);
+
   return (
     <div className="w-full py-5 flex flex-col  px-5 h-full ">
-      <div className="grid grid-cols-7 w-full scrollbar-none scrollbar-thumb-red-800 divide-x  border-x border-t  bg-white ">
+      <div className="grid grid-cols-6 w-full scrollbar-none scrollbar-thumb-red-800 divide-x  border-x border-t  bg-white ">
         {/* header */}
         {[" ", ...SCENES].map((scene, index) => {
           if (index === 0)
@@ -37,7 +39,7 @@ const DayCalendar = () => {
           );
         })}
       </div>
-      <div className="grid grid-cols-7 w-full bg-white overflow-y-auto scrollbar-none  divide-x border-x divide-y">
+      <div className="grid grid-cols-6 w-full bg-white overflow-y-auto scrollbar-none  divide-x border-x divide-y">
         {/* body */}
         {hours.map((hour, index) => {
           const keys = Object.keys(grouped);
@@ -47,7 +49,7 @@ const DayCalendar = () => {
             return timeKey === hourKey;
           });
 
-          let eventsInHour = keysInBetweenHour
+          const eventsInHour = keysInBetweenHour
             .map((key) => {
               return grouped[key];
             })
