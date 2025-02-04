@@ -10,7 +10,7 @@ function App() {
         onClick={() => {
           setDay(day === 1 ? 2 : 1);
         }}
-        className="bottom-2 right-2 absolute"
+        className="bottom-2 right-2 absolute z-50"
       >
         Dia {day}
       </button>
