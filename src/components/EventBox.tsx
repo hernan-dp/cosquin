@@ -30,7 +30,16 @@ const EventBox = ({
   const percentage = getPercentageByMinutes(hour);
 
   return (
-    <div className="text-center h-[100px] relative select-none">
+    <div
+      className="text-center h-[100px] relative select-none"
+      onClick={() => {
+        if (isHidden) {
+          setHidden((prev) => prev.filter((e) => e !== title));
+        } else {
+          setHidden((prev) => [...prev, title]);
+        }
+      }}
+    >
       <div
         className={cn(
           `absolute w-[95%] h-[50px] opacity-100 rounded-xl z-10 -translate-x-[50%] transform`,
@@ -65,35 +74,44 @@ const EventBox = ({
               "bg-pink-500": scene === "Paraguay",
             })}
           />
-          <div className="absolute right-2 top-1 text-xs font-extrabold text-black z-30">
+          <div className="absolute right-0 bottom-0 text-xs font-extrabold text-black z-30">
             {isHidden ? (
               <div
-                className="bg-gray-600 rounded-md px-1 py-1 "
-                onClick={() => {
-                  console.log("click");
-                  setHidden((prev) => prev.filter((e) => e !== title));
-                }}
+                className={cn("bg-gray-600 rounded-tl-md px-1 py-1 ", {
+                  "bg-red-500": scene === "Blues",
+                  "bg-green-500": scene === "Norte",
+                  "bg-blue-500": scene === "Sur",
+                  "bg-yellow-500": scene === "Montaña",
+                  "bg-purple-500": scene === "Boomerang",
+                  "bg-pink-500": scene === "Paraguay",
+                })}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="white"
-                  width="18"
-                  height="18"
+                  width="14"
+                  height="14"
                 >
                   <path d="M12 4.5C7.305 4.5 3.135 7.305 1.5 12c1.635 4.695 5.805 7.5 10.5 7.5s8.865-2.805 10.5-7.5C20.865 7.305 16.695 4.5 12 4.5zm0 12c-2.485 0-4.5-2.015-4.5-4.5S9.515 7.5 12 7.5s4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5zm0-7.5c-1.655 0-3 1.345-3 3s1.345 3 3 3 3-1.345 3-3-1.345-3-3-3z" />
                 </svg>
               </div>
             ) : (
               <div
-                className="bg-gray-600 rounded-md px-1 py-1 z-30"
-                onClick={() => setHidden((prev) => [...prev, title])}
+                className={cn("bg-gray-600 rounded-tl-md px-1 py-1 z-30", {
+                  "bg-red-500": scene === "Blues",
+                  "bg-green-500": scene === "Norte",
+                  "bg-blue-500": scene === "Sur",
+                  "bg-yellow-500": scene === "Montaña",
+                  "bg-purple-500": scene === "Boomerang",
+                  "bg-pink-500": scene === "Paraguay",
+                })}
               >
                 <svg
                   fill="white"
                   viewBox="0 0 32 32"
-                  width={18}
-                  height={18}
+                  width={14}
+                  height={14}
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
