@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { Fragment, useMemo } from "react";
 import { getGoruped, getSceneByDay } from "../constants/grilla";
 import { hours } from "../constants/hours";
 import EventBox from "./EventBox";
@@ -63,19 +63,19 @@ const DayCalendar = ({ day }: { day: number }) => {
           });
 
           return (
-            <>
+            <Fragment key={`${index}-${hour}`}>
               <HourCell key={`${index}-${hour}`} hour={hour} />
               {eventsRow.map((event, index) => {
                 return (
                   <EventBox
-                    key={`${index}-${hour}`}
+                    key={`${index}-${hour}-${event.title}`}
                     scene={event.scene}
                     hour={event.time}
                     title={event.title}
                   />
                 );
               })}
-            </>
+            </Fragment>
           );
         })}
       </div>
